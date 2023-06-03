@@ -1,0 +1,17 @@
+ .card{
+    width: 100%;
+    margin: 0 auto ;
+    display: flex;
+    justify-content: center;
+    padding: 10rem 0;
+}
+h1{
+    /* width: 20%; */
+    /* border: 1px solid dodgerblue; */
+    padding: 10px 20px;
+    align-content: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 5rem;
+
+} 
