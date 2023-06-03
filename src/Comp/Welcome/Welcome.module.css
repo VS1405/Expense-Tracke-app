@@ -3,15 +3,12 @@
     margin: 0 auto ;
     display: flex;
     justify-content: center;
-    padding: 10rem 0;
+    border-bottom: 2px solid rgba(30, 144, 255, 0.5);
 }
-h1{
+.card > header{
     /* width: 20%; */
-    /* border: 1px solid dodgerblue; */
     padding: 10px 20px;
-    align-content: center;
-    font-weight: bold;
     font-style: italic;
-    font-size: 5rem;
+    font-size: 1.5rem;
 
 } 
