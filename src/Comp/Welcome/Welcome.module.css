@@ -2,7 +2,7 @@
     width: 100%;
     margin: 0 auto ;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     border-bottom: 2px solid rgba(30, 144, 255, 0.5);
 }
 .card > header{
@@ -10,5 +10,7 @@
     padding: 10px 20px;
     font-style: italic;
     font-size: 1.5rem;
-
 } 
+.card > p{
+    padding-right: 10px;
+}

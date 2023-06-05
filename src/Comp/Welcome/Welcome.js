@@ -1,10 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import classes from './Welcome.module.css'
 
-const Welcome = () => {
+const Welcome = (props) => {
   return (
     <div className={classes.card} >
-      <header>Welcome To Expense Tracker!!!</header>
+      <header>{props.header}</header>
+      <p>{props.para} <Link to='/Welcome/profilePageUpdate' >Complete now</Link> </p>
     </div>
   )
 };
