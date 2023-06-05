@@ -16,7 +16,7 @@
     justify-content: space-between;
     margin-bottom: 15px;
 }
-.header> button{
+.header> .btn{
     color: red;
    border: 1px solid red;
    padding: 5px ;
@@ -49,4 +49,9 @@
 }
 .button:hover, .button:active{
     background-color: brown;
+}
+.list{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
 }
