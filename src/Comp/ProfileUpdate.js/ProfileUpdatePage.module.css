@@ -50,8 +50,23 @@
 .button:hover, .button:active{
     background-color: brown;
 }
+
+
+.lists{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 3rem; */
+}
 .list{
     display: flex;
     justify-content: center;
     margin-top: 3rem;
+    padding: 15px 20px;
+}
+.list > p {
+    padding-right: 25px;
+
 }

@@ -9,7 +9,7 @@ const AuthForm = () => {
 
   const history = useNavigate()   // its used to render the new component page 
 
-  const AuthCtx = useContext(AuthContect)
+  const AuthCtx = useContext(AuthContect);
 
   const EmailInputRef = useRef()
   const PasswordInputRef = useRef()

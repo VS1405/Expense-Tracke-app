@@ -1,0 +1,46 @@
+  
+
+  
+  // useEffect(() => {
+  //   fetchDataList();
+  // }, []);
+
+  // const fetchDataList = async () => {
+  //   try {
+  //     const response = await axios.get('YOUR_API_URL');
+  //     const fetchedData = response.data;
+  //     setDatalist(fetchedData);
+  //   } catch (error) {
+  //     console.log(error);
+  //     console.log('Error in fetching data');
+  //   }
+  // };
+
+  // try {
+    //   const responce = await axios.post(
+    //     'https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyABurclSGsl2V7_fg6o1LjbqWTHge3w4yA',
+    //     {
+    //       idToken: AuthCtx.token,
+    //       displayName: enteredName,
+    //       photoUrl: enteredUrl,
+    //       returnSecureToken: false
+    //     }
+    //   )
+    //   console.log(responce, 'at responce')
+    //   const data = await responce.data
+    //   console.log(data.displayName, 'hope its work');
+    //   console.log(data.localId, 'hope its work');
+
+    //   const obj = {
+    //     id: data.localId,
+    //     email: data.email,
+    //     displayName: data.displayName,
+    //     photoUrl: enteredUrl,
+    //   }
+    //   setDatalist({...obj, obj})
+    // }
+    // catch (error) {
+
+    //   console.log(error);
+    //   console.log('something went wrong')
+    // }

@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+.suspencePara{
+  width: 70%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  padding: 2rem, 5rem;
+  text-align: center;
+  justify-content: center;
+  color: black;
+
+
+}
