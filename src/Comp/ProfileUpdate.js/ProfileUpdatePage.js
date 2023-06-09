@@ -9,7 +9,8 @@ const ProfileUpdatePage = () => {
 
   const AuthCtx = useContext(AuthContect);
 
-  const [dataList, setDatalist] = useState([])
+  const [dataList, setDatalist] = useState([]);
+  const [selectedId, setSelectedId] = useState(null);
 
   // console.log(dataList)
   const nameRef = useRef();
@@ -28,12 +29,48 @@ const ProfileUpdatePage = () => {
     };
 
     try {
-      const response = await axios.post('https://tracker-website-dbfd7-default-rtdb.firebaseio.com/users.json', obj);
+      if (selectedId) {
+        await axios.put(`https://tracker-website-dbfd7-default-rtdb.firebaseio.com/users/${selectedId}.json`, obj);
+        const updatedList = dataList.map((item) => {
+          if (item.id === selectedId) {
+            return { id: item.id, ...obj };
+          }
+          return item;
+        });
+        setDatalist(updatedList);
+        setSelectedId(null);
+      } else {
+        const response = await axios.post('https://tracker-website-dbfd7-default-rtdb.firebaseio.com/users.json', obj);
+        const data = response.data;
+        const updatedList = [...dataList, { id: data.name, ...obj }];
+        setDatalist(updatedList);
+      }
 
-      const data = response.data;
+      nameRef.current.value = '';
+      profileUrlRef.current.value = '';
+    } catch (error) {
+      console.log(error);
+      console.log('Something went wrong');
+    }
+  
+  };
 
-      const updatedList = [...dataList, { id: data.name, ...obj }];
+  const editHandler = (id) => {
+    const selectedItem = dataList.find((item) => item.id === id);
+    if (selectedItem) {
+      nameRef.current.value = selectedItem.name;
+      profileUrlRef.current.value = selectedItem.photoUrl;
+      setSelectedId(id);
+      deleteHandler(id)
+    }
+  };
+
+  const deleteHandler = async (id) => {
+    try {
+      await axios.delete(`https://tracker-website-dbfd7-default-rtdb.firebaseio.com/users/${id}.json`);
+      const updatedList = dataList.filter((item) => item.id !== id);
       setDatalist(updatedList);
+      setSelectedId(null);
     } catch (error) {
       console.log(error);
       console.log('Something went wrong');
@@ -96,6 +133,8 @@ const ProfileUpdatePage = () => {
           <div key={item.id} className={classes.list}>
             <p>Name: {item.name}</p>
             <p>Photo Url: {item.photoUrl}</p>
+            <button onClick={() => editHandler(item.id)} className={classes.BtnE}>Edit</button>
+            <button onClick={() => deleteHandler(item.id)} className={classes.BtnD}>Delete</button>
           </div>
         ))}
       </div>
