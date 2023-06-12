@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    list-style: none;
+    padding: 1.2rem 2.5rem;
+    border-bottom: 1px solid gray
+}
+.link{
+    padding: 2px 15px;
+    font-size: 20px;
+    text-decoration: none;
+}

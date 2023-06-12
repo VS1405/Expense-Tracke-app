@@ -1,30 +1,34 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
 import React, {useState, Suspense } from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Welcome from './Comp/Welcome/Welcome';
-import AuthForm from './Comp/Login/Auth/AuthForm';
 import ProfileUpdatePage from './Comp/ProfileUpdate.js/ProfileUpdatePage';
+import UserDetail from './Comp/UserDetails.js/UserDetail';
+import SignUp from './Comp/Page/SignUp/SignUp';
+import LogIn from './Comp/Page/LogIn/LogIn';
 
 function App() {
 
-  const Welcome = React.lazy(()=> import('./Comp/Welcome/Welcome'));
-  const AuthForm = React.lazy(()=> import('./Comp/Login/Auth/AuthForm'));
+  const MainPage = React.lazy(()=> import('./Comp/Page/MainPage'));
 
   return (
     <Suspense fallback={<p className='suspencePara'>Please wait I'm Loading</p>}>
-    <Routes>
-      <Route path='/' element={<AuthForm />} exact></Route>
-      <Route path='/Welcome'
-        element={<Welcome header='Welcome To Expense Tracker!!!'
-          para='Your profile is incomplete'
-        />}
-      />
+      <Router>
 
+      <Routes>
+      <Route path='/' element={<MainPage />} exact></Route>
+      <Route path='/LogIn' element={<LogIn />}/>
+      <Route path='/SignUp' element={<SignUp />}/>
+      <Route path='/Welcome' element={<UserDetail />} />
       <Route path='/Welcome/profilePageUpdate' element={<ProfileUpdatePage />}></Route>
     </Routes>
+      </Router>
+    
     </Suspense>
   );
 }
 
 export default App;
+
+
+
