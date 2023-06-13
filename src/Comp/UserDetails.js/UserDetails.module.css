@@ -1,0 +1,17 @@
+.logOut{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 10px
+}
+.logOut button{
+    padding: 5px;
+    border: transparent;
+    color: white;
+    border-radius: 8px;
+    background-color: rgb(88, 88, 214);
+}
+.logOut button:hover{
+    border: none;
+    background-color: rgb(46, 46, 212);
+}

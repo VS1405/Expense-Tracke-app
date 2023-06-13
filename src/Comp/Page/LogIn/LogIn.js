@@ -23,6 +23,10 @@ const LogIn = () => {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
+        console.log(user);
+        // console.log(user.providerId)   // it show firebase
+        // console.log(user.reloadUserInfo.localId + 'current user')
+        localStorage.setItem(user.reloadUserInfo.localId , user.reloadUserInfo.email)
         if(user.emailVerified){
           setMessage('Login Successful')
         }
@@ -69,6 +73,7 @@ const LogIn = () => {
       <div className={classes.actions}>
         <button className={classes.button}>Login</button>
       </div>
+
       <div className={classes.createAcc}>
         <p>Don't have an account</p>
         <p>
