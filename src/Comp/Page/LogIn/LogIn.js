@@ -73,9 +73,8 @@ const LogIn = () => {
       <div className={classes.actions}>
         <button className={classes.button}>Login</button>
       </div>
-      <div >
+      
         <h4><Link to={'/LogIn/ForgetPassword'} className={classes.resetPassword}>forget password ?</Link></h4>
-      </div>
 
       <div className={classes.createAcc}>
         <p>Don't have an account</p>

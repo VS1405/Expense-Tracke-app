@@ -11,7 +11,7 @@ const ForgotPassword = () => {
 
   const handleResetPassword = (e) => {
     e.preventDefault();
-const auth = getAuth(app)
+    const auth = getAuth(app)
     sendPasswordResetEmail(auth, email)
       .then(() => {
         // Password reset email sent

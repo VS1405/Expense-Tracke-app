@@ -87,6 +87,8 @@
   }
   .resetPassword {
     color: white;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
   }
   .resetPassword:hover{
     color: #2c91d4;
