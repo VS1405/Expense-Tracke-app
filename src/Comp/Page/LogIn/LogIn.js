@@ -21,12 +21,12 @@ const LogIn = () => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in 
+        // Signed in successfully 
         const user = userCredential.user;
         console.log(user);
         // console.log(user.providerId)   // it show firebase
-        // console.log(user.reloadUserInfo.localId + 'current user')
-        localStorage.setItem(user.reloadUserInfo.localId , user.reloadUserInfo.email)
+        // console.log(user.reloadUserInfo.localId + 'current user') // it gives Id of user
+        localStorage.setItem('localId' , user.reloadUserInfo.email)
         if(user.emailVerified){
           setMessage('Login Successful')
         }
@@ -72,6 +72,9 @@ const LogIn = () => {
 
       <div className={classes.actions}>
         <button className={classes.button}>Login</button>
+      </div>
+      <div >
+        <h4><Link to={'/LogIn/ForgetPassword'} className={classes.resetPassword}>forget password ?</Link></h4>
       </div>
 
       <div className={classes.createAcc}>

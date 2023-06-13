@@ -85,7 +85,12 @@
     border-radius: 4px;
     padding: 0.5rem 1.5rem;
   }
-  
+  .resetPassword {
+    color: white;
+  }
+  .resetPassword:hover{
+    color: #2c91d4;
+  }
   .actions {
     margin-top: 1.5rem;
     margin-top: 1rem;

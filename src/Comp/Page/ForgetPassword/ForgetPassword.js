@@ -3,6 +3,8 @@ import { auth, sendPasswordResetEmail } from 'firebase/auth'
 import { getAuth } from 'firebase/auth';
 import app from '../../../firebase';
 
+import classes from './ForgetPassword.module.css'
+
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -14,20 +16,21 @@ const auth = getAuth(app)
       .then(() => {
         // Password reset email sent
         setMessage('Password reset email sent. Please check your inbox.');
+
       })
       .catch((error) => {
         // Error sending password reset email
-        setMessage('Error sending password reset email.');
+        setMessage(' Enter the correct Email');
         console.error('Reset password error:', error);
       });
   };
 
   return (
-    <div>
+    <div className={classes.container}>
       <h2>Forgot Password</h2>
-      <form onSubmit={handleResetPassword}>
+      <form onSubmit={handleResetPassword} className={classes.control}>
         <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <button type="submit">Reset Password</button>
+        <button type="submit" className={classes.button}>Reset Password</button>
       </form>
       <p>{message}</p>
     </div>
