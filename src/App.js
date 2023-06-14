@@ -3,9 +3,8 @@ import React, {useState, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import ProfileUpdatePage from './Comp/ProfileUpdate.js/ProfileUpdatePage';
-import UserDetail from './Comp/UserDetails.js/UserDetail';
+
 import SignUp from './Comp/Page/SignUp/SignUp';
-import LogIn from './Comp/Page/LogIn/LogIn';
 import ForgotPassword from './Comp/Page/ForgetPassword/ForgetPassword';
 
 function App() {
