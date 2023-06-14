@@ -117,11 +117,11 @@ else{
         <div>
           <form onSubmit={handleSubmit} className={classes.dailyform}>
             <label>Money:</label>
-            <input type="text" value={money} onChange={(e) => setMoney(e.target.value)} />
+            <input type="text" value={money} onChange={(e) => setMoney(e.target.value)} required/>
             <label>Description:</label>
-            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
+            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} required/>
             <label>Category:</label>
-            <select value={category} onChange={(e) => setCategory(e.target.value)}>
+            <select value={category} onChange={(e) => setCategory(e.target.value)} required>
               <option value="">Select category</option>
               <option value="food">Food</option>
               <option value="petrol">Petrol</option>
@@ -138,8 +138,8 @@ else{
               {expenses.map((expense) => (
                 <li key={expense.id}>
                   Money: {expense.money}, Description: {expense.description}, Category: {expense.category}
-                  <button onClick={() => editHandler(expense.id)}>Edit</button>
-                  <button onClick={() => deleteHandler(expense.id)}>Delete</button>
+                  <button className={classes.editBtn} onClick={() => editHandler(expense.id)}>Edit</button>
+                  <button className={classes.deleteBtn} onClick={() => deleteHandler(expense.id)}>Delete</button>
                 </li>
               ))}
             </ul>

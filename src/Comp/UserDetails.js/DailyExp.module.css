@@ -32,3 +32,33 @@
 .listOfExpenses ul > li{
 list-style: none;
 }
+
+.editBtn, .deleteBtn{
+    color: black;
+    font-weight: bold;
+    margin-left: 10px;
+    background-color: transparent;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+.editBtn{
+    border: 2px solid green;
+    border-radius: 5px;
+}
+.editBtn:hover{
+    background-color: green;
+    color: white;
+    padding: 2px 5px;
+    border: 1px solid green;
+}
+.deleteBtn{
+    border: 2px solid red;
+    border-radius: 5px;
+}
+
+.deleteBtn:hover, .deleteBtn:active{
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    border: 1px solid red;
+}
