@@ -42,7 +42,8 @@ list-style: none;
     cursor: pointer;
 }
 .editBtn{
-    border: 2px solid green;
+    color: green;
+    border: 1px solid green;
     border-radius: 5px;
 }
 .editBtn:hover{
@@ -52,7 +53,8 @@ list-style: none;
     border: 1px solid green;
 }
 .deleteBtn{
-    border: 2px solid red;
+ color: red;
+    border: 1px solid red;
     border-radius: 5px;
 }
 

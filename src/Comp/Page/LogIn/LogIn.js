@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import classes from './LogIn.module.css'
 import app from '../../../firebase';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { loginAction } from '../../../store/authSlice';
+import classes from './LogIn.module.css'
+
 const LogIn = () => {
+
+ const dispatch =  useDispatch()
+const IsloggedIn = useSelector(state=> state.auth.loggedIn)
 
   const navigate = useNavigate()
   const [email, setEmail] = useState('');
@@ -28,7 +34,12 @@ const LogIn = () => {
         // console.log(user.reloadUserInfo.localId + 'current user') // it gives Id of user
         localStorage.setItem('localId' , user.reloadUserInfo.email)
         if(user.emailVerified){
-          setMessage('Login Successful')
+          // setMessage('Login Successful')
+
+          
+          // Dispatch the login action
+          dispatch(loginAction.login({ token: 'localId', userId: user.reloadUserInfo.email }));
+
         }
         else{
           setMessage('Please verify your email to log in.')

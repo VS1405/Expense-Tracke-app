@@ -19,7 +19,7 @@ const UserDetail = () => {
     signOut(auth).then(() => {
       // Log Out successsful 
       localStorage.removeItem('localId')
-      navigate('/LogIn');
+      navigate('/');
       // alert('Log Out successfully')
     })
       .catch((error) => {

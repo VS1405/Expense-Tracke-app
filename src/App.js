@@ -18,8 +18,8 @@ function App() {
       <Router>
 
       <Routes>
-      <Route path='/' element={<MainPage />} exact></Route>
-      <Route path='/LogIn' element={<LogIn />} exact/>
+      {/* <Route path='/' element={<MainPage />} exact></Route> */}
+      <Route path='/' element={<LogIn />} exact/>
       <Route path='/SignUp' element={<SignUp />}/>
       <Route path='/LogIn/ForgetPassword' element={<ForgotPassword /> } />
       <Route path='/Welcome' element={<UserDetail />} />

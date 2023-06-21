@@ -33,7 +33,7 @@ const SignUp = () => {
           console.log('Error sending email verification link:', error);
         })
         // after log in successfully the page will render the new page by using navigate
-        navigate('/Login')
+        navigate('/')
         alert('Successful SignUp with new account')
         // ...
       })
