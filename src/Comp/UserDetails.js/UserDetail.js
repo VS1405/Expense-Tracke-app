@@ -1,18 +1,24 @@
-import React, { Fragment} from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getAuth, signOut } from 'firebase/auth'
 import app from '../../firebase'
 
+import { useDispatch, useSelector } from 'react-redux';
+import { themeReducer } from '../../store/themeSlice';
+
+
 import classes from './UserDetails.module.css'
 import Welcome from '../Welcome/Welcome'
-import DailyExp from './DailyExp'
+import DailyExp from './DailyExp';
 
 const UserDetail = () => {
 
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const auth = getAuth(app);
 
-
+  const [theme, setTheme] = useState('light-theme')
+  const darkMode = useSelector(state => state.theme.darkMode)
 
   const logOutHandler = () => {
 
@@ -27,22 +33,35 @@ const UserDetail = () => {
         console.log('Log out Error', error)
       })
   };
- 
+  const lightTheme  = {
+    backgroundColor: 'white',
+    color: 'black'
+  }
+  const darkTheme = {
+    backgroundColor: 'black',
+    color: 'white'
+  }
 
+  const toggleThemeHandler = () => {
+   dispatch(themeReducer.toggleTheme())
+  };
 
   return (
     <Fragment>
-      <section>
-        <Welcome header='Welcome To Expense Tracker!!!' para='Your profile is incomplete' />
-        <div className={classes.logOut}>
-          <button onClick={logOutHandler}>Log Out</button>
-        </div>
-      </section>
-      <section>
-        <DailyExp />
-      </section>
+      <div style={darkMode? darkTheme : lightTheme}>
+        <section>
+          <Welcome header='Welcome To Expense Tracker!!!' para='Your profile is incomplete' />
+          <div className={classes.logOut}>
+            <button onClick={logOutHandler}>Log Out</button>
 
+            <button onClick={toggleThemeHandler}>Dark Theme</button>
+          </div>
+        </section>
+        <section>
+          <DailyExp />
+        </section>
 
+      </div>
     </Fragment>
   )
 };

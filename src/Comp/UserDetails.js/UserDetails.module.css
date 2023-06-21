@@ -10,6 +10,7 @@
     color: white;
     border-radius: 8px;
     background-color: rgb(88, 88, 214);
+    margin-left: 10px;
 }
 .logOut button:hover{
     border: none;

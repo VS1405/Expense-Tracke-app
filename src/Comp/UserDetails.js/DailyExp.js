@@ -21,7 +21,8 @@ const DailyExp = () => {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
     const [expenses, setExpenses] = useState([]);
-  const [selectedId, setSelectedId] = useState(null);
+  const [selectedId, setSelectedId] = useState(null); 
+  const [activePremium, setActivePremiun] = useState (false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -119,12 +120,48 @@ const DailyExp = () => {
 
     fetchExpenses();
   }, []);
+const activeHandler = ()=>{
+ setActivePremiun(true) 
+}
+
+const handleExportExpenses = () => {
+  // Get the expenses data from the state
+  const Link = document.getElementById('link')
+
+  // Convert expenses to CSV format
+  const csvData = expense.map((expense) => {
+    return Object.values(expense).join(',');
+  });
+console.log(csvData)
+  // Generate a CSV file
+  const csvContent = csvData.join('\n');
+
+  // Create a Blob object from the CSV content
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+
+  // Create a temporary URL for the Blob
+  const url = URL.createObjectURL(blob);
+
+  // Create a temporary link element
+  const link = document.createElement('a');
+  link.href = url;
+  link.setAttribute('download', 'expenses.csv');
+  document.body.appendChild(link);
+// console.log(link)
+  // Simulate a click on the link to trigger the download
+  link.click();
+
+  // Clean up
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+};
+
 
   return (
         <Fragment>
-          <section>
+          <section className={classes.section}>
             <div className={classes.Expenses}>
-              <p>Daily Expenses</p>
+              <h3>Daily Expenses</h3>
             </div>
             <div>
               <form onSubmit={handleSubmit} className={classes.dailyform}>
@@ -139,9 +176,7 @@ const DailyExp = () => {
                   <option value="petrol">Petrol</option>
                   <option value="salary">Salary</option>
                 </select>
-                <button type="submit" className={classes.expBtn}>
-                  Submit
-                </button>
+                <button type="submit" className={classes.expBtn}>Submit</button>
               </form>
               <br />
               <div className={classes.listOfExpenses}>
@@ -156,7 +191,8 @@ const DailyExp = () => {
                   ))}
                 </ul>
               </div>
-              {showPremiumButton && <button className={classes.premiumBtn}>Activate Premium</button>}
+              {showPremiumButton && <button onClick={activeHandler} className={classes.premiumBtn}>Activate Premium</button>}
+            <button onClick={handleExportExpenses}>Download File</button>
             </div>
           </section>
         </Fragment>
