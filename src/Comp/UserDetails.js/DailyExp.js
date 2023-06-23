@@ -159,6 +159,7 @@ console.log(csvData)
 
   return (
         <Fragment>
+        
           <section className={classes.section}>
             <div className={classes.Expenses}>
               <h3>Daily Expenses</h3>
@@ -192,7 +193,7 @@ console.log(csvData)
                 </ul>
               </div>
               {showPremiumButton && <button onClick={activeHandler} className={classes.premiumBtn}>Activate Premium</button>}
-            <button onClick={handleExportExpenses}>Download File</button>
+            {activePremium && <button className={classes.premiumBtn} onClick={handleExportExpenses}>Download File</button>}
             </div>
           </section>
         </Fragment>
