@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
 let logoutTimer;
-
-
 const AuthContect = React.createContext({
     token: '',
     isLoggedIn: false,

@@ -52,9 +52,9 @@ const UserDetail = () => {
         <section>
           <Welcome header='Welcome To Expense Tracker!!!' para='Your profile is incomplete' />
           <div className={classes.logOut}>
-            <button onClick={logOutHandler}>Log Out</button>
+            <button onClick={logOutHandler} >Log Out</button>
 
-            <button onClick={toggleThemeHandler}>Dark Theme</button>
+            <button onClick={toggleThemeHandler} className={classes.darkColor}>Dark Theme</button>
           </div>
         </section>
         <section>

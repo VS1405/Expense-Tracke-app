@@ -7,12 +7,20 @@
 .logOut button{
     padding: 10px 15px;
     border: transparent;
+    font-weight: bold ;
     color: white;
     border-radius: 8px;
     background-color: rgb(88, 88, 214);
     margin-left: 10px;
 }
 .logOut button:hover{
+    cursor: pointer;
     border: none;
     background-color: rgb(46, 46, 212);
+}
+ .logOut .darkColor:hover, 
+.darkColor:active{
+    cursor: pointer;
+color: white;
+background-color: black;
 }
