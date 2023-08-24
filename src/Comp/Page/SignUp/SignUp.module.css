@@ -61,7 +61,12 @@
     border-radius: 4px;
     padding: 0.5rem 1.5rem;
   }
-  
+  .existAccountLink {
+    color: white;
+  }
+  .existAccountLink:hover {
+    color: rgb(120, 157, 236);
+  }
   .actions {
     margin-top: 1.5rem;
     margin-top: 1rem;

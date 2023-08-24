@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getAuth, signOut } from 'firebase/auth'
 import app from '../../firebase'
@@ -17,7 +17,7 @@ const UserDetail = () => {
   const navigate = useNavigate()
   const auth = getAuth(app);
 
-  const [theme, setTheme] = useState('light-theme')
+  // const [theme, setTheme] = useState('light-theme')
   const darkMode = useSelector(state => state.theme.darkMode)
 
   const logOutHandler = () => {
@@ -29,7 +29,7 @@ const UserDetail = () => {
       // alert('Log Out successfully')
     })
       .catch((error) => {
-        const errorCode = error.errorCode
+    
         console.log('Log out Error', error)
       })
   };
@@ -48,16 +48,16 @@ const UserDetail = () => {
 
   return (
     <Fragment>
-      <div style={darkMode? darkTheme : lightTheme}>
+      <div style={darkMode? darkTheme : lightTheme} className={classes.Con}>
         <section>
-          <Welcome header='Welcome To Expense Tracker!!!' para='Your profile is incomplete' />
+          <Welcome header='Welcome To Expense Tracker!!!' para='Your profile is incomplete'/>
           <div className={classes.logOut}>
             <button onClick={logOutHandler} >Log Out</button>
 
             <button onClick={toggleThemeHandler} className={classes.darkColor}>Dark Theme</button>
           </div>
         </section>
-        <section>
+        <section className={classes.DailyExpenses}>
           <DailyExp />
         </section>
 

@@ -1,12 +1,11 @@
 import './App.css';
-import React, { useState, Suspense } from 'react'
+import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector } from 'react-redux';
-import { darkMode } from './store/themeSlice'
-
-import ProfileUpdatePage from './Comp/ProfileUpdate.js/ProfileUpdatePage';
-import SignUp from './Comp/Page/SignUp/SignUp';
-import ForgotPassword from './Comp/Page/ForgetPassword/ForgetPassword';
+// import { darkMode } from './store/themeSlice'
+// import ProfileUpdatePage from './Comp/ProfileUpdate.js/ProfileUpdatePage';
+// import SignUp from './Comp/Page/SignUp/SignUp';
+// import ForgotPassword from './Comp/Page/ForgetPassword/ForgetPassword';
 
 function App() {
 

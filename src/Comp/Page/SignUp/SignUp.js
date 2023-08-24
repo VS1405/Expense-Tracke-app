@@ -73,8 +73,8 @@ const SignUp = () => {
         <div className={classes.actions}>
           <button type='submit' className={classes.button}>Sign Up</button>
         </div>
-        <div>
-           <span><Link to={'/LogIn'}>Login with existing account</Link></span>
+        <div >
+           <span ><Link to={'/'} className={classes.existAccountLink}>Login with existing account</Link></span>
         </div>
       </form>
     </section>

@@ -6,17 +6,20 @@
     margin-right: 0;
 }
 .Expenses{
-    border-bottom: 1px solid gray;
     padding-left: 10px;
+}
+.Expenses h3{
+    text-align: center;
 }
 
 .dailyform{
     width: 45%;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 1rem auto;
-    background-color: rgb(33, 88, 88);
+    background-color: rgb(45, 30, 78);
     padding: 10px;
     color: white;
     border-radius: 10px;
@@ -25,17 +28,22 @@
 .dailyform input, select{
     width: 80%;
     padding: 2px;
+    margin-bottom: 5px;
 }
 .expBtn{
     width: 20%;
     padding: 5px 10px;
     margin-top: 15px;
     font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    box-shadow: 5px 0px 10px 5px  rgb(129, 129, 235) ;
     
-}
+} 
 .expBtn:hover{
     color: white;
-    background-color: blueviolet;
+    background-color: rgb(46, 46, 212);
+    border: 1px solid transparent;
 }
 .listOfExpenses{
     width: 100%;
